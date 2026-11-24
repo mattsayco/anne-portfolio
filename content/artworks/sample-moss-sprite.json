@@ -1,0 +1,20 @@
+{
+  "title": "Moss Sprite (Sample)",
+  "image": "/media/artwork/sample-moss-sprite.png",
+  "alt": "Placeholder sample artwork: moss sprite, a procedurally generated pixel art piece",
+  "description": "Placeholder description. This sample piece was generated for layout testing — replace it with your own artwork and a few sentences about the idea, process or client.",
+  "categories": [
+    "pixel-art"
+  ],
+  "tags": [
+    "sprite"
+  ],
+  "date": "2026-02-15",
+  "software": [
+    "Aseprite"
+  ],
+  "process_images": [],
+  "featured": false,
+  "published": true,
+  "order": 100
+}

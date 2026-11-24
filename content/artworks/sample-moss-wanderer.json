@@ -1,0 +1,23 @@
+{
+  "title": "Moss Wanderer (Sample)",
+  "image": "/media/artwork/sample-moss-wanderer.png",
+  "alt": "Placeholder sample artwork: moss wanderer, a procedurally generated character piece",
+  "description": "Placeholder description. This sample piece was generated for layout testing — replace it with your own artwork and a few sentences about the idea, process or client.",
+  "categories": [
+    "character"
+  ],
+  "tags": [
+    "character design",
+    "fantasy"
+  ],
+  "date": "2026-10-15",
+  "software": [
+    "Clip Studio Paint"
+  ],
+  "process_images": [
+    "/media/artwork/sample-moss-wanderer-process.png"
+  ],
+  "featured": true,
+  "published": true,
+  "order": 20
+}

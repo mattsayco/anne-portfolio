@@ -1,0 +1,14 @@
+{
+  "title": "Custom Artwork",
+  "description": "Something else in mind? Tell me about it and we will figure out the best approach together.",
+  "icon": "sparkle",
+  "image": "",
+  "pricing_mode": "request",
+  "starting_price": "",
+  "pricing_note": "Every project is different — send me the details for a quote.",
+  "delivery_time": "",
+  "details": [],
+  "cta_label": "Request a quote",
+  "active": true,
+  "order": 60
+}

@@ -1,0 +1,17 @@
+{
+  "title": "Pixel Art",
+  "description": "Sprites, tilesets and animated pixel scenes in a consistent palette.",
+  "icon": "pixel",
+  "image": "",
+  "pricing_mode": "from",
+  "starting_price": "$40",
+  "pricing_note": "Final price depends on complexity and usage rights.",
+  "delivery_time": "3–10 days",
+  "details": [
+    "Sprite sheets",
+    "Animation frames"
+  ],
+  "cta_label": "Request a quote",
+  "active": true,
+  "order": 40
+}

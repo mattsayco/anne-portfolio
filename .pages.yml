@@ -1,0 +1,609 @@
+# Pages CMS configuration — https://pagescms.org/docs/configuration/
+# This file defines the editing forms the artist sees at https://app.pagescms.org.
+# Changing a field `name` here requires the matching change in scripts/build-content.mjs.
+
+media:
+  - name: artwork
+    label: Artwork images
+    input: media/artwork
+    output: /media/artwork
+    categories: [image]
+    rename: safe
+  - name: profile
+    label: Profile & hero images
+    input: media/profile
+    output: /media/profile
+    categories: [image]
+    rename: safe
+  - name: services
+    label: Service images
+    input: media/services
+    output: /media/services
+    categories: [image]
+    rename: safe
+  - name: testimonials
+    label: Testimonial photos
+    input: media/testimonials
+    output: /media/testimonials
+    categories: [image]
+    rename: safe
+  - name: files
+    label: Documents (resume, PDFs)
+    input: media/files
+    output: /media/files
+    categories: [document]
+    rename: safe
+
+content:
+  # ------------------------------------------------------------------ PORTFOLIO
+  - name: artworks
+    label: Portfolio
+    type: collection
+    path: content/artworks
+    format: json
+    filename: "{primary}.json"
+    view:
+      fields: [image, title, categories, featured, published, order]
+      primary: title
+      sort: [order, title, date]
+      default:
+        sort: order
+        order: asc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+        options:
+          maxlength: 80
+      - name: image
+        label: Artwork image
+        description: Upload the full-resolution file (PNG or JPG). Smaller web versions are created automatically when the site is published.
+        type: image
+        required: true
+        options:
+          media: artwork
+      - name: alt
+        label: Image description (alt text)
+        description: Describe what is in the picture for visitors using screen readers and for search engines. One sentence is enough.
+        type: string
+        required: true
+        options:
+          maxlength: 200
+      - name: description
+        label: Description
+        description: Optional. Shown next to the artwork when it is opened. Leave a blank line between paragraphs.
+        type: text
+        options:
+          maxlength: 1500
+      - name: categories
+        label: Categories
+        description: Pick one or more. The gallery filter buttons are built from this list.
+        type: select
+        required: true
+        options:
+          multiple: true
+          min: 1
+          values:
+            - value: illustration
+              label: Illustration
+            - value: character
+              label: Character
+            - value: background
+              label: Background
+            - value: environment
+              label: Environment
+            - value: icon
+              label: Icon
+            - value: pixel-art
+              label: Pixel Art
+            - value: 3d
+              label: 3D
+            - value: misc
+              label: Misc
+      - name: tags
+        label: Tags
+        description: Optional keywords, e.g. "fantasy", "game art".
+        type: string
+        list: true
+      - name: date
+        label: Date created
+        type: date
+        options:
+          format: yyyy-MM-dd
+      - name: software
+        label: Software / tools used
+        type: string
+        list: true
+      - name: process_images
+        label: Extra images (process, details, sketches)
+        description: Optional. Shown under the main image in the artwork viewer.
+        type: image
+        options:
+          media: artwork
+          multiple:
+            max: 8
+      - name: featured
+        label: Feature on the home section
+        description: Featured pieces appear in the collage at the top of the page (the first 3 by display order).
+        type: boolean
+        default: false
+      - name: published
+        label: Published
+        description: Turn off to keep this piece as a hidden draft. Drafts are not shown on the website.
+        type: boolean
+        default: true
+      - name: order
+        label: Display order
+        description: Lower numbers appear first. Tip — use steps of 10 (10, 20, 30…) so you can slot new pieces in between later.
+        type: number
+        default: 100
+
+  # ------------------------------------------------------------------ HERO
+  - name: hero
+    label: Home (hero)
+    type: file
+    path: content/hero.json
+    format: json
+    fields:
+      - name: eyebrow
+        label: Small line above the headline
+        type: string
+        options:
+          maxlength: 60
+      - name: headline
+        label: Headline
+        description: Wrap words in *asterisks* to highlight them, e.g. "Painting *small worlds*".
+        type: string
+        required: true
+        options:
+          maxlength: 120
+      - name: intro
+        label: Introduction
+        type: text
+        options:
+          maxlength: 300
+      - name: show_featured
+        label: Show featured artwork collage
+        description: Uses the artworks marked "Feature on the home section".
+        type: boolean
+        default: true
+      - name: image
+        label: Custom hero image (optional)
+        description: Only used when the featured collage is turned off or no artwork is featured.
+        type: image
+        options:
+          media: profile
+      - name: buttons
+        label: Buttons
+        type: object
+        list:
+          max: 3
+          collapsible:
+            collapsed: true
+            summary: "{fields.label}"
+        fields:
+          - name: label
+            label: Button text
+            type: string
+            required: true
+          - name: link
+            label: Link
+            description: "Use #portfolio, #about, #services or #contact to jump to a section, or a full web address (https://…)."
+            type: string
+            required: true
+          - name: style
+            label: Style
+            type: select
+            options:
+              values:
+                - value: primary
+                  label: Filled (main action)
+                - value: secondary
+                  label: Outline
+
+  # ------------------------------------------------------------------ ABOUT
+  - name: profile
+    label: About me
+    type: file
+    path: content/profile.json
+    format: json
+    fields:
+      - name: name
+        label: Name
+        type: string
+        required: true
+      - name: title
+        label: Professional title
+        type: string
+        required: true
+      - name: avatar
+        label: Profile picture
+        type: image
+        options:
+          media: profile
+      - name: avatar_alt
+        label: Profile picture description (alt text)
+        type: string
+      - name: bio
+        label: About me
+        description: Leave a blank line between paragraphs.
+        type: text
+        required: true
+        options:
+          maxlength: 2000
+      - name: background
+        label: Artistic background
+        type: text
+        options:
+          maxlength: 1200
+      - name: experience
+        label: Experience
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{fields.role} — {fields.organization}"
+        fields:
+          - name: role
+            label: Role
+            type: string
+            required: true
+          - name: organization
+            label: Studio / client / school
+            type: string
+          - name: period
+            label: Period
+            description: e.g. "2022 – Present"
+            type: string
+          - name: description
+            label: Description
+            type: text
+      - name: skills
+        label: Skills & specialties
+        type: string
+        list: true
+      - name: tools
+        label: Software & tools
+        type: string
+        list: true
+      - name: interests
+        label: Artistic interests
+        type: string
+        list: true
+      - name: achievements
+        label: Achievements (optional)
+        type: string
+        list: true
+      - name: resume
+        label: Resume / CV file
+        description: Upload a PDF. Leave empty to hide the download button.
+        type: file
+        options:
+          media: files
+      - name: resume_label
+        label: Resume button text
+        type: string
+      - name: links
+        label: Extra links shown in About
+        description: e.g. a full ArtStation page, a shop, a game you worked on.
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{fields.label}"
+        fields:
+          - name: label
+            label: Link text
+            type: string
+            required: true
+          - name: url
+            label: Web address
+            type: string
+            required: true
+            pattern:
+              regex: "^(https?://|mailto:|#).+"
+              message: "Start with https://"
+
+  # ------------------------------------------------------------------ SERVICES
+  - name: services
+    label: Services
+    type: collection
+    path: content/services
+    format: json
+    filename: "{primary}.json"
+    view:
+      fields: [title, pricing_mode, active, order]
+      primary: title
+      sort: [order, title]
+      default:
+        sort: order
+        order: asc
+    fields:
+      - name: title
+        label: Service name
+        type: string
+        required: true
+      - name: description
+        label: Description
+        type: text
+        required: true
+        options:
+          maxlength: 500
+      - name: icon
+        label: Icon
+        type: select
+        options:
+          values:
+            - value: brush
+              label: Brush
+            - value: character
+              label: Character
+            - value: mountain
+              label: Mountain / landscape
+            - value: tree
+              label: Tree / environment
+            - value: pixel
+              label: Pixel
+            - value: grid
+              label: Icon grid
+            - value: cube
+              label: 3D cube
+            - value: sparkle
+              label: Sparkle
+            - value: pen
+              label: Pen
+      - name: image
+        label: Image (optional)
+        description: If set, shown instead of the icon.
+        type: image
+        options:
+          media: services
+      - name: pricing_mode
+        label: Pricing
+        type: select
+        required: true
+        options:
+          values:
+            - value: fixed
+              label: Fixed price
+            - value: from
+              label: Starting from
+            - value: request
+              label: Price on request
+            - value: hidden
+              label: Don't show pricing
+      - name: starting_price
+        label: Price
+        description: 'Include the currency, e.g. "$120" or "€80". Ignored for "Price on request".'
+        type: string
+      - name: pricing_note
+        label: Pricing note
+        type: string
+      - name: delivery_time
+        label: Typical delivery time
+        type: string
+      - name: details
+        label: What's included
+        type: string
+        list: true
+      - name: cta_label
+        label: Button text
+        type: string
+      - name: active
+        label: Show on website
+        type: boolean
+        default: true
+      - name: order
+        label: Display order
+        description: Lower numbers appear first.
+        type: number
+        default: 100
+
+  # ------------------------------------------------------------------ TESTIMONIALS
+  - name: testimonials
+    label: Testimonials
+    type: collection
+    path: content/testimonials
+    format: json
+    filename: "{primary}.json"
+    view:
+      fields: [name, role, published, order]
+      primary: name
+      sort: [order, name]
+      default:
+        sort: order
+        order: asc
+    fields:
+      - name: name
+        label: Client name
+        type: string
+        required: true
+      - name: role
+        label: Role / company
+        type: string
+      - name: quote
+        label: Testimonial
+        type: text
+        required: true
+        options:
+          maxlength: 600
+      - name: avatar
+        label: Photo (optional)
+        type: image
+        options:
+          media: testimonials
+      - name: project
+        label: Project (optional)
+        type: string
+      - name: published
+        label: Show on website
+        type: boolean
+        default: true
+      - name: order
+        label: Display order
+        type: number
+        default: 100
+
+  # ------------------------------------------------------------------ CONTACT
+  - name: contact
+    label: Contact & social links
+    type: file
+    path: content/contact.json
+    format: json
+    fields:
+      - name: email
+        label: Contact email
+        type: string
+        required: true
+      - name: location
+        label: Location / availability line
+        type: string
+      - name: commission_status
+        label: Commission status
+        type: select
+        required: true
+        options:
+          values:
+            - value: open
+              label: Open for commissions
+            - value: limited
+              label: Limited availability
+            - value: closed
+              label: Currently closed
+      - name: commission_note
+        label: Commission status note
+        description: Optional short note, e.g. "Booking for March".
+        type: string
+      - name: commission_link
+        label: Commission inquiry link
+        description: "#contact to use the form, or a link to an external form (e.g. VGen, Google Form)."
+        type: string
+      - name: response_time
+        label: Response time note
+        type: string
+      - name: social_links
+        label: Social media
+        description: Only platforms listed here are shown on the site.
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{fields.platform}"
+        fields:
+          - name: platform
+            label: Platform
+            type: select
+            required: true
+            options:
+              values:
+                - { value: artstation, label: ArtStation }
+                - { value: behance, label: Behance }
+                - { value: instagram, label: Instagram }
+                - { value: x, label: X (Twitter) }
+                - { value: bluesky, label: Bluesky }
+                - { value: pinterest, label: Pinterest }
+                - { value: linkedin, label: LinkedIn }
+                - { value: deviantart, label: DeviantArt }
+                - { value: dribbble, label: Dribbble }
+                - { value: youtube, label: YouTube }
+                - { value: tiktok, label: TikTok }
+                - { value: threads, label: Threads }
+                - { value: tumblr, label: Tumblr }
+                - { value: kofi, label: Ko-fi }
+                - { value: patreon, label: Patreon }
+                - { value: itchio, label: itch.io }
+                - { value: github, label: GitHub }
+                - { value: website, label: Other website }
+          - name: url
+            label: Profile address
+            type: string
+            required: true
+            pattern:
+              regex: "^https?://.+"
+              message: "Start with https://"
+          - name: label
+            label: Custom name (optional)
+            description: Only needed for "Other website".
+            type: string
+      - name: form_enabled
+        label: Show contact form
+        type: boolean
+        default: true
+      - name: form_access_key
+        label: Web3Forms access key
+        description: Get a free key at web3forms.com using your contact email. This key is safe to be public. Without it the form shows your email address instead.
+        type: string
+      - name: form_success_message
+        label: Message shown after sending
+        type: string
+
+  # ------------------------------------------------------------------ SITE
+  - name: site
+    label: Site settings & SEO
+    type: file
+    path: content/site.json
+    format: json
+    fields:
+      - name: site_url
+        label: Website address
+        description: e.g. https://yourname.github.io — used for search engines and share previews.
+        type: string
+        required: true
+      - name: site_title
+        label: Browser tab / search result title
+        type: string
+        required: true
+        options:
+          maxlength: 70
+      - name: meta_description
+        label: Search result description
+        type: text
+        options:
+          maxlength: 170
+      - name: share_image
+        label: Social share image
+        description: Shown when the site link is shared on social media. Landscape works best.
+        type: image
+        options:
+          media: artwork
+      - name: language
+        label: Site language code
+        type: string
+        default: en
+      - name: portfolio_heading
+        label: Portfolio heading
+        type: string
+      - name: portfolio_intro
+        label: Portfolio intro
+        type: text
+      - name: services_heading
+        label: Services heading
+        type: string
+      - name: services_intro
+        label: Services intro
+        type: text
+      - name: testimonials_heading
+        label: Testimonials heading
+        type: string
+      - name: show_testimonials
+        label: Show testimonials section
+        type: boolean
+        default: true
+      - name: contact_heading
+        label: Contact heading
+        type: string
+      - name: contact_intro
+        label: Contact intro
+        type: text
+      - name: goatcounter_code
+        label: GoatCounter code (optional analytics)
+        description: Leave empty to disable analytics. See CMS_SETUP.md.
+        type: string
+      - name: footer_note
+        label: Footer note
+        type: string
+
+settings:
+  content:
+    merge: true

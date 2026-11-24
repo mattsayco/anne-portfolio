@@ -1,0 +1,18 @@
+{
+  "title": "Digital Illustration",
+  "description": "Full-colour illustrations for book covers, key art, posters and personal projects.",
+  "icon": "brush",
+  "image": "",
+  "pricing_mode": "from",
+  "starting_price": "$120",
+  "pricing_note": "Final price depends on complexity and usage rights.",
+  "delivery_time": "1–2 weeks",
+  "details": [
+    "Up to 2 revision rounds",
+    "High-resolution files",
+    "Personal or commercial licence"
+  ],
+  "cta_label": "Request a quote",
+  "active": true,
+  "order": 10
+}

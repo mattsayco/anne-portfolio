@@ -1,0 +1,20 @@
+{
+  "title": "Sketchbook Noise (Sample)",
+  "image": "/media/artwork/sample-sketchbook-noise.png",
+  "alt": "Placeholder sample artwork: sketchbook noise, a procedurally generated misc piece",
+  "description": "Placeholder description. This sample piece was generated for layout testing — replace it with your own artwork and a few sentences about the idea, process or client.",
+  "categories": [
+    "misc"
+  ],
+  "tags": [
+    "experiment"
+  ],
+  "date": "2026-04-15",
+  "software": [
+    "Procreate"
+  ],
+  "process_images": [],
+  "featured": false,
+  "published": true,
+  "order": 80
+}

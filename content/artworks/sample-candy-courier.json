@@ -1,0 +1,23 @@
+{
+  "title": "Candy Courier (Sample)",
+  "image": "/media/artwork/sample-candy-courier.png",
+  "alt": "Placeholder sample artwork: candy courier, a procedurally generated character piece",
+  "description": "Placeholder description. This sample piece was generated for layout testing — replace it with your own artwork and a few sentences about the idea, process or client.",
+  "categories": [
+    "character",
+    "illustration"
+  ],
+  "tags": [
+    "mascot"
+  ],
+  "date": "2026-03-15",
+  "software": [
+    "Procreate"
+  ],
+  "process_images": [
+    "/media/artwork/sample-candy-courier-process.png"
+  ],
+  "featured": true,
+  "published": true,
+  "order": 90
+}

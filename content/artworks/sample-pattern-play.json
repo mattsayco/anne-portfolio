@@ -1,0 +1,21 @@
+{
+  "title": "Pattern Play (Sample)",
+  "image": "/media/artwork/sample-pattern-play.png",
+  "alt": "Placeholder sample artwork: pattern play, a procedurally generated misc piece",
+  "description": "Placeholder description. This sample piece was generated for layout testing — replace it with your own artwork and a few sentences about the idea, process or client.",
+  "categories": [
+    "misc",
+    "illustration"
+  ],
+  "tags": [
+    "pattern"
+  ],
+  "date": "2026-07-15",
+  "software": [
+    "Procreate"
+  ],
+  "process_images": [],
+  "featured": false,
+  "published": false,
+  "order": 160
+}

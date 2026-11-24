@@ -1,0 +1,16 @@
+{
+  "email": "hello@example.com",
+  "location": "Available worldwide (remote)",
+  "commission_status": "open",
+  "commission_note": "Taking 3 new commissions this month.",
+  "commission_link": "#contact",
+  "response_time": "I usually reply within 2 working days.",
+  "social_links": [
+    { "platform": "artstation", "url": "https://www.artstation.com/", "label": "" },
+    { "platform": "instagram", "url": "https://www.instagram.com/", "label": "" },
+    { "platform": "linkedin", "url": "https://www.linkedin.com/", "label": "" }
+  ],
+  "form_enabled": true,
+  "form_access_key": "",
+  "form_success_message": "Thanks! Your message is on its way — I'll get back to you soon."
+}

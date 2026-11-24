@@ -1,0 +1,21 @@
+{
+  "name": "Anne",
+  "title": "Digital Artist & Illustrator",
+  "avatar": "/media/profile/avatar.png",
+  "avatar_alt": "Placeholder avatar illustration",
+  "bio": "This is placeholder biography text. Replace it in the CMS with a few sentences about who you are, what you love drawing and what you're looking for next.\n\nUse a blank line to start a new paragraph.",
+  "background": "Placeholder: where you studied or how you learned, and the kinds of teams or clients you've worked with.",
+  "experience": [
+    { "role": "Freelance Illustrator", "organization": "Self-employed", "period": "2023 – Present", "description": "Placeholder: commissions for indie games, book covers and streamers." },
+    { "role": "Junior 2D Artist", "organization": "Sample Studio (placeholder)", "period": "2021 – 2023", "description": "Placeholder: character sprites, UI icons and promotional art." }
+  ],
+  "skills": ["Illustration", "Character design", "Environment painting", "Pixel art", "Icon design", "3D modelling basics"],
+  "tools": ["Procreate", "Photoshop", "Clip Studio Paint", "Aseprite", "Blender", "Illustrator"],
+  "interests": ["Cozy games", "Folklore", "Botanical drawing"],
+  "achievements": ["Placeholder: featured in an online art showcase", "Placeholder: game jam art lead"],
+  "resume": "/media/files/sample-resume.pdf",
+  "resume_label": "Download resume (PDF)",
+  "links": [
+    { "label": "ArtStation portfolio", "url": "https://www.artstation.com/" }
+  ]
+}

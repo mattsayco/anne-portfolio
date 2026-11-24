@@ -1,0 +1,11 @@
+{
+  "eyebrow": "Digital artist · Illustrator",
+  "headline": "Painting *small worlds* and the characters who *live in them*.",
+  "intro": "I'm Anne, a digital artist making illustrations, characters, environments and pixel art for games, books and brands.",
+  "image": "",
+  "show_featured": true,
+  "buttons": [
+    { "label": "View my portfolio", "link": "#portfolio", "style": "primary" },
+    { "label": "Hire me", "link": "#contact", "style": "secondary" }
+  ]
+}

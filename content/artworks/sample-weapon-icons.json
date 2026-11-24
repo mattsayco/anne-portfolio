@@ -1,0 +1,20 @@
+{
+  "title": "Weapon Icon Pack (Sample)",
+  "image": "/media/artwork/sample-weapon-icons.png",
+  "alt": "Placeholder sample artwork: weapon icon pack, a procedurally generated icon piece",
+  "description": "Placeholder description. This sample piece was generated for layout testing — replace it with your own artwork and a few sentences about the idea, process or client.",
+  "categories": [
+    "icon"
+  ],
+  "tags": [
+    "RPG"
+  ],
+  "date": "2026-11-15",
+  "software": [
+    "Illustrator"
+  ],
+  "process_images": [],
+  "featured": false,
+  "published": true,
+  "order": 120
+}

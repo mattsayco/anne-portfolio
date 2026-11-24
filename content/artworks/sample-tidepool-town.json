@@ -1,0 +1,23 @@
+{
+  "title": "Tidepool Town (Sample)",
+  "image": "/media/artwork/sample-tidepool-town.png",
+  "alt": "Placeholder sample artwork: tidepool town, a procedurally generated environment piece",
+  "description": "Placeholder description. This sample piece was generated for layout testing — replace it with your own artwork and a few sentences about the idea, process or client.",
+  "categories": [
+    "environment"
+  ],
+  "tags": [
+    "isometric",
+    "game art"
+  ],
+  "date": "2026-09-15",
+  "software": [
+    "Photoshop"
+  ],
+  "process_images": [
+    "/media/artwork/sample-tidepool-town-process.png"
+  ],
+  "featured": true,
+  "published": true,
+  "order": 30
+}

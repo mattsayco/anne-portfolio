@@ -1,0 +1,21 @@
+{
+  "title": "Ember Forge (Sample)",
+  "image": "/media/artwork/sample-ember-forge.png",
+  "alt": "Placeholder sample artwork: ember forge, a procedurally generated environment piece",
+  "description": "Placeholder description. This sample piece was generated for layout testing — replace it with your own artwork and a few sentences about the idea, process or client.",
+  "categories": [
+    "environment",
+    "illustration"
+  ],
+  "tags": [
+    "interior"
+  ],
+  "date": "2026-01-15",
+  "software": [
+    "Photoshop"
+  ],
+  "process_images": [],
+  "featured": false,
+  "published": true,
+  "order": 110
+}

@@ -1,0 +1,17 @@
+{
+  "site_url": "https://username.github.io",
+  "site_title": "Anne — Digital Artist & Illustrator",
+  "meta_description": "Portfolio of Anne, a digital artist creating illustrations, characters, environments, icons, pixel art and 3D. Open for commissions and studio roles.",
+  "share_image": "/media/artwork/sample-lantern-valley.png",
+  "language": "en",
+  "portfolio_heading": "Selected work",
+  "portfolio_intro": "A mix of client projects, game art and personal pieces. Click any piece to see it larger.",
+  "services_heading": "What I can make for you",
+  "services_intro": "Commissions for studios, indie teams and individuals. Not sure which service fits? Just ask.",
+  "testimonials_heading": "Kind words",
+  "contact_heading": "Let's make something",
+  "contact_intro": "Hiring, commissioning or just saying hi — I read every message.",
+  "show_testimonials": true,
+  "goatcounter_code": "",
+  "footer_note": "All artwork © the artist. Please don't reuse or train on it without permission."
+}

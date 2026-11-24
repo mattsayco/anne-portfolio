@@ -1,0 +1,17 @@
+{
+  "title": "Character Design",
+  "description": "Original characters with expression sheets, colour palettes and turnarounds ready for production.",
+  "icon": "character",
+  "image": "",
+  "pricing_mode": "from",
+  "starting_price": "$90",
+  "pricing_note": "Final price depends on complexity and usage rights.",
+  "delivery_time": "1–2 weeks",
+  "details": [
+    "Front / side / back views",
+    "Expression sheet add-on"
+  ],
+  "cta_label": "Request a quote",
+  "active": true,
+  "order": 20
+}

@@ -1,0 +1,21 @@
+{
+  "title": "Glass Orbs Study (Sample)",
+  "image": "/media/artwork/sample-glass-orbs.png",
+  "alt": "Placeholder sample artwork: glass orbs study, a procedurally generated 3d piece",
+  "description": "Placeholder description. This sample piece was generated for layout testing — replace it with your own artwork and a few sentences about the idea, process or client.",
+  "categories": [
+    "3d"
+  ],
+  "tags": [
+    "lighting",
+    "materials"
+  ],
+  "date": "2026-05-15",
+  "software": [
+    "Blender"
+  ],
+  "process_images": [],
+  "featured": false,
+  "published": true,
+  "order": 70
+}

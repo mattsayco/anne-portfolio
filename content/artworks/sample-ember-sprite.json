@@ -1,0 +1,22 @@
+{
+  "title": "Ember Sprite (Sample)",
+  "image": "/media/artwork/sample-ember-sprite.png",
+  "alt": "Placeholder sample artwork: ember sprite, a procedurally generated pixel art piece",
+  "description": "Placeholder description. This sample piece was generated for layout testing — replace it with your own artwork and a few sentences about the idea, process or client.",
+  "categories": [
+    "pixel-art",
+    "character"
+  ],
+  "tags": [
+    "sprite",
+    "32x32"
+  ],
+  "date": "2026-08-15",
+  "software": [
+    "Aseprite"
+  ],
+  "process_images": [],
+  "featured": false,
+  "published": true,
+  "order": 40
+}

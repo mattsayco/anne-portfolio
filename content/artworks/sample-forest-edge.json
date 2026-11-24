@@ -1,0 +1,21 @@
+{
+  "title": "Forest Edge (Sample)",
+  "image": "/media/artwork/sample-forest-edge.png",
+  "alt": "Placeholder sample artwork: forest edge, a procedurally generated background piece",
+  "description": "Placeholder description. This sample piece was generated for layout testing — replace it with your own artwork and a few sentences about the idea, process or client.",
+  "categories": [
+    "background",
+    "environment"
+  ],
+  "tags": [
+    "forest"
+  ],
+  "date": "2026-09-15",
+  "software": [
+    "Photoshop"
+  ],
+  "process_images": [],
+  "featured": false,
+  "published": true,
+  "order": 140
+}

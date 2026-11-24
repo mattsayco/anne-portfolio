@@ -1,0 +1,24 @@
+{
+  "title": "Lantern Valley (Sample)",
+  "image": "/media/artwork/sample-lantern-valley.png",
+  "alt": "Placeholder sample artwork: lantern valley, a procedurally generated illustration piece",
+  "description": "Placeholder description. This sample piece was generated for layout testing — replace it with your own artwork and a few sentences about the idea, process or client.",
+  "categories": [
+    "illustration",
+    "background"
+  ],
+  "tags": [
+    "landscape",
+    "warm light"
+  ],
+  "date": "2026-11-15",
+  "software": [
+    "Procreate"
+  ],
+  "process_images": [
+    "/media/artwork/sample-lantern-valley-process.png"
+  ],
+  "featured": true,
+  "published": true,
+  "order": 10
+}
