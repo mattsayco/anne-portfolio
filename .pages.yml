@@ -547,7 +547,7 @@ content:
     fields:
       - name: site_url
         label: Website address
-        description: e.g. https://yourname.github.io — used for search engines and share previews.
+        description: The full address the site is served from, e.g. https://anne.art or https://yourname.github.io/anne-portfolio — used for links, search engines and share previews. Change it when you switch to a custom domain.
         type: string
         required: true
       - name: site_title

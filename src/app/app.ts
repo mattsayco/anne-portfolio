@@ -40,8 +40,8 @@ export class App {
   }
 
   /**
-   * In-page "#section" links. With <base href="/"> a bare "#contact" resolves to
-   * "/#contact", which would drop ?category=… and reload the page. Scroll instead
+   * In-page "#section" links. A bare "#contact" resolves against <base href>
+   * (e.g. "/#contact"), which would drop ?category=… and reload the page. Scroll instead
    * and keep the current query string.
    */
   protected onDocumentClick(event: MouseEvent): void {

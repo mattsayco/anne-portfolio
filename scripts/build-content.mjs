@@ -133,7 +133,7 @@ async function processImage(p, { pixelated = false, context = '' } = {}) {
     const out = `${name}-${hash}${extname(ref.rel).toLowerCase()}`;
     await copyFile(ref.local, join(OUT_IMG, out));
     producedImages.add(out);
-    result.src = `/_img/${out}`;
+    result.src = `_img/${out}`;
   } else {
     const stats = await sharp(input).stats().catch(() => null);
     if (stats?.dominant) {
@@ -156,7 +156,7 @@ async function processImage(p, { pixelated = false, context = '' } = {}) {
           .toFile(dest);
       }
       producedImages.add(out);
-      variants.push({ w, url: `/_img/${out}` });
+      variants.push({ w, url: `_img/${out}` });
     }
     result.srcset = variants.map((v) => `${v.url} ${v.w}w`).join(', ');
     result.src = variants[variants.length - 1].url;
@@ -176,7 +176,7 @@ async function processFile(p, context) {
   }
   const out = basename(ref.rel).replace(/[^\w.-]+/g, '-');
   await copyFile(ref.local, join(OUT_FILES, out));
-  return `/_files/${out}`;
+  return `_files/${out}`;
 }
 
 // ---------------------------------------------------------------- icons
