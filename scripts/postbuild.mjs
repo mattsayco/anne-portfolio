@@ -26,14 +26,29 @@ try {
 }
 
 const content = JSON.parse(await readFile(join(root, 'src/app/core/generated/content.json'), 'utf8'));
-let basePath = '/';
-try {
-  basePath = new URL(content.site.url).pathname.replace(/\/*$/, '/');
-} catch {
-  // No or invalid Website address: build-content already warned; serve from the root.
+/**
+ * The path of the Website address, e.g. "/anne-portfolio/". Only plain path
+ * characters are allowed and repeated slashes are collapsed, so a CMS value can
+ * never inject markup or turn the base into a protocol-relative "//other-site/".
+ */
+function basePathFrom(siteUrl) {
+  let url;
+  try {
+    url = new URL(siteUrl);
+  } catch {
+    return '/'; // missing/invalid address: build-content already warned
+  }
+  if (url.protocol !== 'https:' && url.protocol !== 'http:') return '/';
+  const path = url.pathname.replace(/\/{2,}/g, '/').replace(/\/*$/, '/');
+  if (!/^\/[A-Za-z0-9._~\-/]*$/.test(path)) {
+    console.error(`✖ Website address path "${url.pathname}" contains unsupported characters`);
+    process.exit(1);
+  }
+  return path;
 }
 
-const html = (await readFile(index, 'utf8')).replace(/<base href="[^"]*"\s*\/?>/, `<base href="${basePath}">`);
+const basePath = basePathFrom(content.site?.url);
+const html = (await readFile(index, 'utf8')).replace(/<base href="[^"]*"\s*\/?>/, () => `<base href="${basePath}">`);
 if (!html.includes(`<base href="${basePath}">`)) {
   console.error('✖ Could not find <base href> in index.html');
   process.exit(1);
